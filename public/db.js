@@ -1,4 +1,5 @@
 let request = window.indexedDB.open("budgetdb", 1);
+let db;
 
 request.onupgradeneeded = function (event) {
     const db = event.target.result;
