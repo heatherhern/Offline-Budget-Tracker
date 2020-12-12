@@ -24,7 +24,7 @@ When brought back online:
 - THEN that will be shown on the page, and added to their transaction history when their connection is back online.
 
 ## User Story
-AS AN avid traveller
-I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
-SO THAT my account balance is accurate when I am traveling
+- AS AN avid traveller
+- I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
+- SO THAT my account balance is accurate when I am traveling
 
