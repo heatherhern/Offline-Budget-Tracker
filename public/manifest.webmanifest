@@ -1,7 +1,6 @@
 {
-    "name": "Images App",
-    "short_name": "Images App",
-    "icons": [],
+    "name": "Offline Budget Tracker",
+    "short_name": "Offline Budget Tracker",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "start_url": "/",
