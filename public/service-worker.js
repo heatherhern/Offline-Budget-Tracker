@@ -3,16 +3,17 @@ console.log("Hi from your service-worker.js file!");
 const CACHE_NAME = "static-cache-v2";
 const DATA_CACHE_NAME = "data-cache-v1";
 
+const iconSizes = ["192", "512"];
+const iconFiles = iconSizes.map(
+    (size) => `/icons/icon-${size}x${size}.png`
+);
+
 const FILES_TO_CACHE = [
     "/",
-    "/index.html",
-    "/index.js",
+    "/app.js",
+    "/favicon.ico",
     "/manifest.webmanifest",
-    "/db.js",
-    "/styles.css",
-    "/icons/icon-192x192.png",
-    "/icons/icon-512x512.png",
-];
+].concat(iconFiles);
 
 // install
 self.addEventListener("install", function (evt) {
