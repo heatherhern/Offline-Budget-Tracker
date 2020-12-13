@@ -11,7 +11,10 @@ const iconFiles = iconSizes.map(
 const FILES_TO_CACHE = [
     "/",
     "/app.js",
+    "/index.html",
     "/manifest.webmanifest",
+    "/db.js",
+    "/styles.css",
 ].concat(iconFiles);
 
 // install
