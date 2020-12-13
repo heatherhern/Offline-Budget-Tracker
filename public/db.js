@@ -1,13 +1,11 @@
-let request = window.indexedDB.open("budgetdb", 1);
+let request = indexedDB.open("budgetdb", 1);
 let db;
+
 
 request.onupgradeneeded = function (event) {
     const db = event.target.result;
     db.createObjectStore("pending", { autoIncrement: true });
 };
-
-
-// https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
 
 request.onsuccess = function (event) {
     db = event.target.result;
@@ -16,7 +14,6 @@ request.onsuccess = function (event) {
         checkDatabase();
     }
 };
-
 
 request.onerror = function (event) {
     console.log("error " + event.target.errorCode);
