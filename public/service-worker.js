@@ -10,7 +10,7 @@ const iconFiles = iconSizes.map(
 
 const FILES_TO_CACHE = [
     '/',
-    '/app.js',
+    '/index.js',
     '/index.html',
     '/manifest.webmanifest',
     '/db.js',
@@ -38,7 +38,7 @@ self.addEventListener('fetch', event => {
 
     if (event.request.url.includes('/api/images')) {
         event.respondWith(
-            caches.open(DATA_CACHE).then(cache => {
+            caches.open(DATA_CACHE_NAME).then(cache => {
                 return fetch(event.request)
                     .then(response => {
                         cache.put(event.request, response.clone());
