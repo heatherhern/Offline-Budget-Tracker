@@ -48,6 +48,7 @@ self.addEventListener("activate", function (evt) {
 // fetch
 self.addEventListener("fetch", function (evt) {
     // cache successful requests to the API
+    // if (url.includes("/all") || url.includes("/find")) {
     if (evt.request.url.includes("/api/")) {
         evt.respondWith(
             caches.open(DATA_CACHE_NAME).then(cache => {
@@ -65,13 +66,14 @@ self.addEventListener("fetch", function (evt) {
                     });
             }).catch(err => console.log(err))
         );
-        return;
+    } else {
+        // respond from static cache, request is not for /api/*
+        evt.respondWith(
+            caches.open(CACHE_NAME).then(cache => {
+                return cache.match(evt.request).then(response => {
+                    return response || fetch(evt.request);
+                });
+            })
+        );
     }
-
-    // if the request is not for the API, serve static assets using "offline-first" approach.
-    evt.respondWith(
-        caches.match(evt.request).then(function (response) {
-            return response || fetch(evt.request);
-        })
-    );
 });
