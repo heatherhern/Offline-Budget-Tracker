@@ -1,22 +1,23 @@
-console.log("Hi from your service-worker.js file!");
+// console.log("Hi from your service-worker.js file!");
 
 const CACHE_NAME = 'static-cache-v2';
 const DATA_CACHE_NAME = 'data-cache-v1';
 
-const iconSizes = ["192", "512"];
-const iconFiles = iconSizes.map(
-    (size) => `/images/icon-${size}x${size}.PNG`
-);
+// const iconSizes = ["192", "512"];
+// const iconFiles = iconSizes.map(
+//     (size) => `/images/icon-${size}x${size}.PNG`
+// );
 
 const FILES_TO_CACHE = [
-    '/',
-    '/index.js',
-    '/index.html',
-    '/manifest.webmanifest',
-    '/db.js',
-    '/styles.css',
-].concat(iconFiles);
-
+    "/",
+    "/index.js",
+    "/index.html",
+    "/manifest.webmanifest",
+    "/db.js",
+    "/styles.css",
+    "/icons/icon-192x192.png",
+    "/icons/icon-512x512.png"
+]
 
 // install
 self.addEventListener("install", function (evt) {
@@ -66,14 +67,13 @@ self.addEventListener("fetch", function (evt) {
                     });
             }).catch(err => console.log(err))
         );
-    } else {
-        // respond from static cache, request is not for /api/*
-        evt.respondWith(
-            caches.open(CACHE_NAME).then(cache => {
-                return cache.match(evt.request).then(response => {
-                    return response || fetch(evt.request);
-                });
-            })
-        );
+        return;
     }
+
+
+    evt.respondWith(
+        caches.match(evt.request).then(function (response) {
+            return response || fetch(evt.request);
+        })
+    );
 });

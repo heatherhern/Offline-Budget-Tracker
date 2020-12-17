@@ -1,4 +1,4 @@
-let request = indexedDB.open("budgetdb", 1);
+let request = indexedDB.open("budgetdb");
 let db;
 
 
@@ -15,8 +15,9 @@ request.onsuccess = function (event) {
     }
 };
 
-request.onerror = function (event) {
-    console.log("error " + event.target.errorCode);
+request.onerror = function(event) {
+    // log error here
+    console.log('ON ERROR', event.target.error);
 };
 
 function saveRecord(record) {
