@@ -3,11 +3,6 @@
 const CACHE_NAME = 'static-cache-v2';
 const DATA_CACHE_NAME = 'data-cache-v1';
 
-// const iconSizes = ["192", "512"];
-// const iconFiles = iconSizes.map(
-//     (size) => `/images/icon-${size}x${size}.PNG`
-// );
-
 const FILES_TO_CACHE = [
     "/",
     "/index.js",
@@ -15,8 +10,8 @@ const FILES_TO_CACHE = [
     "/manifest.webmanifest",
     "/db.js",
     "/styles.css",
-    "/icons/icon-192x192.png",
-    "/icons/icon-512x512.png"
+    "/images/icon-192x192.png",
+    "/images/icon-512x512.png"
 ]
 
 // install
