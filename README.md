@@ -2,6 +2,8 @@
 
 Link to deployed application: https://heather-budget-tracking.herokuapp.com/
 
+![App Screenshot](/public/images/app.png)
+
 # Functionality
 
 App allows for offline access and functionality.
