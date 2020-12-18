@@ -1,4 +1,3 @@
-// require('dotenv').config()
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
@@ -16,7 +15,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const MONGODB_URI = process.env.MONGODB_URI || 'https://heather-budget-tracking.herokuapp.com/';
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/budget",
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false
