@@ -1,7 +1,6 @@
 let request = indexedDB.open("budgetdb");
 let db;
 
-
 request.onupgradeneeded = function (event) {
     const db = event.target.result;
     db.createObjectStore("pending", { autoIncrement: true });
@@ -16,7 +15,6 @@ request.onsuccess = function (event) {
 };
 
 request.onerror = function(event) {
-    // log error here
     console.log('ON ERROR', event.target.error);
 };
 
