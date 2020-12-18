@@ -1,6 +1,6 @@
 # Offline-Budget-Tracker
 
-Link to deployed application: https://desolate-shore-50692.herokuapp.com/
+Link to deployed application: https://heather-budget-tracking.herokuapp.com/
 
 # Functionality
 

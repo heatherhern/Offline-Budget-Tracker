@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/budgetdb';
+const MONGODB_URI = process.env.MONGODB_URI || 'https://heather-budget-tracking.herokuapp.com/';
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false
